@@ -1,4 +1,4 @@
-function isConverged = ConvergenceCheck(A, eps)
+function isConverged = convergenceCheck(A, eps)
 n = size(A, 1);
 numElements = n * (n-1) / 2;
 lowerTraingleElements = zeros(1, numElements);
