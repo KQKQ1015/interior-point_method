@@ -27,7 +27,7 @@ for i = 1:maxIteration
     
     % Convergence check
     if convergenceCheck(D, 1e-6)
-        break;
+        i = maxIteration;
     end
 end
 end

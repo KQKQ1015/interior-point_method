@@ -20,7 +20,7 @@ for k = 1:n
     ak = A(:, k);
     p = 0;
     for i=1:k-1
-        pi = dot(ak, Q(:, i));
+        pi = sum(ak.*Q(:, i));
         p = p - pi * Q(:, i);
         R(i, k) = pi;
     end
