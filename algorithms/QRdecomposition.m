@@ -12,13 +12,13 @@ function [Q, R] = QRdecomposition(A)
 % Gram-Schmidt origogonal method was used
 
 n = size(A, 1);
-Q = zeros(n, n);
-R = zeros(n, n);
+Q = single(zeros(n, n));
+R = single(zeros(n, n));
 
 % Gram-Schmidt orthonormalization
 for k = 1:n
     ak = A(:, k);
-    p = 0;
+    p = single(zeros(n, 1));
     for i=1:k-1
         pi = sum(ak.*Q(:, i));
         p = p - pi * Q(:, i);

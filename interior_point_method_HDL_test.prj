@@ -10,9 +10,9 @@
     <param.unifiedParamStorage />
     <param.hdlParamStorage />
     <param.configImportActive>false</param.configImportActive>
-    <var.hdl.isGenericIpPlatform>false</var.hdl.isGenericIpPlatform>
+    <var.hdl.isGenericIpPlatform>true</var.hdl.isGenericIpPlatform>
     <param.hdl.CodegenWorkflow>option.hdl.MATLABToHDL</param.hdl.CodegenWorkflow>
-    <param.fixptconv.enum.needfixedpoint>option.fixptconv.enum.needfixedpoint.yes</param.fixptconv.enum.needfixedpoint>
+    <param.fixptconv.enum.needfixedpoint>option.fixptconv.enum.needfixedpoint.no</param.fixptconv.enum.needfixedpoint>
     <param.hdl.WorkingDirectory>option.hdl.ProjectDirectory</param.hdl.WorkingDirectory>
     <param.hdl.WorkingSpecifiedDirectory />
     <param.hdl.BuildDirectory>option.hdl.ProjectDirectory</param.hdl.BuildDirectory>
@@ -32,6 +32,12 @@
     <param.fixptconv.ContainerTypes>false</param.fixptconv.ContainerTypes>
     <param.fixptconv.SafetyMargin>0</param.fixptconv.SafetyMargin>
     <param.fixptconv.ProposeUsingDesignMinMaxAnd>option.fixptconv.ProposeUsingDesignMinMaxAnd.SimAndDerivedMinMax</param.fixptconv.ProposeUsingDesignMinMaxAnd>
+    <param.transformedVariables>
+      <UserEntities />
+    </param.transformedVariables>
+    <param.computedVariables>
+      <ComputedEntities />
+    </param.computedVariables>
     <param.fixptconv.FiMathString>fimath('RoundingMethod', 'Floor', 'OverflowAction', 'Wrap', 'ProductMode', 'FullPrecision', 'MaxProductWordLength', 128, 'SumMode', 'FullPrecision', 'MaxSumWordLength', 128)</param.fixptconv.FiMathString>
     <param.fixptconv.DefaultRoundMode>option.fixptconv.proposetypes.floor</param.fixptconv.DefaultRoundMode>
     <param.fixptconv.DefaultOverflowMode>option.fixptconv.proposetypes.wrap</param.fixptconv.DefaultOverflowMode>
@@ -43,7 +49,11 @@
     <param.fixptconv.ConvertConstantsToFi>true</param.fixptconv.ConvertConstantsToFi>
     <param.fixptconv.FICastFiVariables>false</param.fixptconv.FICastFiVariables>
     <param.fixptconv.SuppressErrorMessages>true</param.fixptconv.SuppressErrorMessages>
-    <param.fixptconv.generatefixptcode.function_replacements />
+    <param.fixptconv.generatefixptcode.function_replacements>
+      <FunctionReplacements>
+        <Replacement />
+      </FunctionReplacements>
+    </param.fixptconv.generatefixptcode.function_replacements>
     <param.fixptconv.PlotFunction />
     <param.SDIPlot>false</param.SDIPlot>
     <param.EnableCodeEfficiencyChecks>false</param.EnableCodeEfficiencyChecks>
@@ -60,21 +70,21 @@
     <param.fpLastConvertChecksum />
     <var.FixedPointAnalysisMode>option.FixedPointAnalysisMode.Sim</var.FixedPointAnalysisMode>
     <param.FixedPointUseDesignRanges>false</param.FixedPointUseDesignRanges>
-    <param.hdl.Workflow>option.workflow.GenericAsicFpga</param.hdl.Workflow>
-    <param.hdl.TargetPlatform />
-    <param.hdl.SynthesisTool />
+    <param.hdl.Workflow>option.workflow.IpCore</param.hdl.Workflow>
+    <param.hdl.TargetPlatform>Generic Xilinx Platform</param.hdl.TargetPlatform>
+    <param.hdl.SynthesisTool>Xilinx Vivado</param.hdl.SynthesisTool>
     <param.hdl.InputFrequency>100</param.hdl.InputFrequency>
-    <param.hdl.TargetFrequency>0</param.hdl.TargetFrequency>
+    <param.hdl.TargetFrequency>50</param.hdl.TargetFrequency>
     <param.hdl.ReferenceDesign />
     <param.hdl.ReferenceDesignPath />
-    <param.hdl.IPCoreName />
+    <param.hdl.IPCoreName>calculatesqrtm_ipcore</param.hdl.IPCoreName>
     <param.hdl.IPCoreVersion>1.0</param.hdl.IPCoreVersion>
     <param.hdl.AdditionalIPFiles />
     <param.hdl.ExecutionMode>option.hdl.FreeRunning</param.hdl.ExecutionMode>
-    <param.hdl.SynthesisToolChipFamily />
-    <param.hdl.SynthesisToolDeviceName />
-    <param.hdl.SynthesisToolPackageName />
-    <param.hdl.SynthesisToolSpeedValue />
+    <param.hdl.SynthesisToolChipFamily>Zynq</param.hdl.SynthesisToolChipFamily>
+    <param.hdl.SynthesisToolDeviceName>xa7z010</param.hdl.SynthesisToolDeviceName>
+    <param.hdl.SynthesisToolPackageName>clg400</param.hdl.SynthesisToolPackageName>
+    <param.hdl.SynthesisToolSpeedValue>-1I</param.hdl.SynthesisToolSpeedValue>
     <param.hdl.TargetInterface>
       <param.hdl.TargetInterface />
     </param.hdl.TargetInterface>
@@ -210,12 +220,12 @@
     <param.hdl.HDLSimCmd>vsim -voptargs=+acc %s.%s\n</param.hdl.HDLSimCmd>
     <param.hdl.HDLSimViewWaveCmd>add wave sim:%s\n</param.hdl.HDLSimViewWaveCmd>
     <param.hdl.HDLSimTerm>run -all\n</param.hdl.HDLSimTerm>
-    <param.hdl.HDLSynthTool>option.hdl.None</param.hdl.HDLSynthTool>
-    <var.toolSpecificEDAScript>hdlgetedascript(''</var.toolSpecificEDAScript>
-    <param.hdl.HDLSynthFilePostfix />
-    <param.hdl.HDLSynthInit />
-    <param.hdl.HDLSynthCmd />
-    <param.hdl.HDLSynthTerm />
+    <param.hdl.HDLSynthTool>option.hdl.Vivado</param.hdl.HDLSynthTool>
+    <var.toolSpecificEDAScript>hdlgetedascript('Vivado'</var.toolSpecificEDAScript>
+    <param.hdl.HDLSynthFilePostfix>_vivado.tcl</param.hdl.HDLSynthFilePostfix>
+    <param.hdl.HDLSynthInit>set src_dir [pwd]\nset prj_dir "vivado_prj"\nfile mkdir ../$prj_dir\ncd ../$prj_dir\ncreate_project %s.xpr\nset_property PART xc7vx485tffg1761-1 [current_project]\n</param.hdl.HDLSynthInit>
+    <param.hdl.HDLSynthCmd>add_file $src_dir/%s\n</param.hdl.HDLSynthCmd>
+    <param.hdl.HDLSynthTerm>launch_runs synth_1 -force\nwait_on_run synth_1\n</param.hdl.HDLSynthTerm>
     <param.hdl.HDLLintTool>option.hdl.None</param.hdl.HDLLintTool>
     <param.hdl.HDLLintInit />
     <param.hdl.HDLLintCmd />
@@ -291,8 +301,8 @@
     <param.hdl.SimulateFILTestBench>false</param.hdl.SimulateFILTestBench>
     <param.hdl.AdditionalSynthesisProjectFiles />
     <param.hdl.CriticalPathSource>option.hdl.Preroute</param.hdl.CriticalPathSource>
-    <param.hdl.EmbeddedSystemTool>Xilinx PlanAhead with Embedded Design</param.hdl.EmbeddedSystemTool>
-    <param.hdl.EmbeddedSystemProjectFolder>codegen/pa_prj</param.hdl.EmbeddedSystemProjectFolder>
+    <param.hdl.EmbeddedSystemTool />
+    <param.hdl.EmbeddedSystemProjectFolder />
     <param.hdl.BitstreamBuildMode>false</param.hdl.BitstreamBuildMode>
     <unset>
       <param.AutoInferDefaultFile />
@@ -305,9 +315,7 @@
       <param.unifiedParamStorage />
       <param.hdlParamStorage />
       <param.configImportActive />
-      <var.hdl.isGenericIpPlatform />
       <param.hdl.CodegenWorkflow />
-      <param.fixptconv.enum.needfixedpoint />
       <param.hdl.WorkingDirectory />
       <param.hdl.WorkingSpecifiedDirectory />
       <param.hdl.BuildDirectory />
@@ -338,7 +346,6 @@
       <param.fixptconv.ConvertConstantsToFi />
       <param.fixptconv.FICastFiVariables />
       <param.fixptconv.SuppressErrorMessages />
-      <param.fixptconv.generatefixptcode.function_replacements />
       <param.fixptconv.PlotFunction />
       <param.SDIPlot />
       <param.EnableCodeEfficiencyChecks />
@@ -355,21 +362,13 @@
       <param.fpLastConvertChecksum />
       <var.FixedPointAnalysisMode />
       <param.FixedPointUseDesignRanges />
-      <param.hdl.Workflow />
-      <param.hdl.TargetPlatform />
-      <param.hdl.SynthesisTool />
       <param.hdl.InputFrequency />
-      <param.hdl.TargetFrequency />
       <param.hdl.ReferenceDesign />
       <param.hdl.ReferenceDesignPath />
       <param.hdl.IPCoreName />
       <param.hdl.IPCoreVersion />
       <param.hdl.AdditionalIPFiles />
       <param.hdl.ExecutionMode />
-      <param.hdl.SynthesisToolChipFamily />
-      <param.hdl.SynthesisToolDeviceName />
-      <param.hdl.SynthesisToolPackageName />
-      <param.hdl.SynthesisToolSpeedValue />
       <param.hdl.TargetInterface />
       <param.hdl.TargetLanguage />
       <param.hdl.CheckConformance />
@@ -503,7 +502,6 @@
       <param.hdl.HDLSimCmd />
       <param.hdl.HDLSimViewWaveCmd />
       <param.hdl.HDLSimTerm />
-      <param.hdl.HDLSynthTool />
       <var.toolSpecificEDAScript />
       <param.hdl.HDLSynthFilePostfix />
       <param.hdl.HDLSynthInit />
@@ -565,8 +563,23 @@
       <param.hdl.EmbeddedSystemProjectFolder />
       <param.hdl.BitstreamBuildMode />
     </unset>
-    <fileset.entrypoints />
-    <fileset.scriptfile />
+    <fileset.entrypoints>
+      <file custom-data-expanded="true" value="${PROJECT_ROOT}/funcs/calculateSqrtM.m">
+        <Inputs fileName="calculateSqrtM.m" functionName="calculateSqrtM">
+          <Input Name="A">
+            <Class>single</Class>
+            <Size>4 x 4</Size>
+            <Value />
+            <InitialValue />
+            <UserDefined>true</UserDefined>
+            <Complex>false</Complex>
+          </Input>
+        </Inputs>
+      </file>
+    </fileset.entrypoints>
+    <fileset.scriptfile>
+      <file>${PROJECT_ROOT}/test.m</file>
+    </fileset.scriptfile>
     <fileset.package />
     <build-deliverables />
     <workflow>

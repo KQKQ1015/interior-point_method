@@ -13,8 +13,8 @@ function [V, D] = calculateEig(A)
 % The QR method is used to calculate eigenvalues and eigenvectors.
 
 % QR method
-D = A;
-V = eye(size(A));
+D = single(A);
+V = single(eye(size(A)));
 
 % If calculation dose not converge, abort at maxIteration.
 maxIteration = 100;
